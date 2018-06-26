@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/scrollview_margin"
+            android:fillViewport="true"
+            tools:context=".UI.RecipeDetailActivity">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/recipe_detail_image"
+                    android:layout_width="@dimen/recipe_image_dimen"
+                    android:layout_height="@dimen/recipe_image_dimen"
+                    android:layout_marginStart="@dimen/recipe_image_margin"
+                    android:layout_marginTop="@dimen/recipe_image_margin"
+                    android:transitionName="@string/transition_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipe_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/recipe_title_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/calories_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_detail_image"
+                    app:layout_constraintTop_toTopOf="@+id/recipe_detail_image"
+                    app:layout_constraintVertical_chainStyle="spread"
+                    tools:text="@string/recipe_title" />
+
+                <TextView
+                    android:id="@+id/calories_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/calories_margin"
+                    android:layout_marginStart="@dimen/calories_margin"
+                    android:textSize="@dimen/calories_text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/see_recipe_on_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_detail_image"
+                    app:layout_constraintTop_toBottomOf="@+id/recipe_title"
+                    tools:text="123 calories" />
+
+                <TextView
+                    android:id="@+id/see_recipe_on_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/link_margin"
+                    android:layout_marginStart="@dimen/link_margin"
+                    android:text="@string/see_full_recipe_on"
+                    android:textSize="@dimen/see_recipe_on_text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/health_diet_labels"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_detail_image"
+                    app:layout_constraintTop_toBottomOf="@+id/calories_tv" />
+
+                <TextView
+                    android:id="@+id/full_recipe_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/link_margin"
+                    android:layout_marginStart="@dimen/link_margin"
+                    android:textSize="@dimen/see_recipe_on_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_detail_image"
+                    app:layout_constraintTop_toBottomOf="@id/see_recipe_on_tv"
+                    tools:text="recipe site" />
+
+                <TextView
+                    android:id="@+id/health_diet_labels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/labels_horizontal_margin"
+                    android:layout_marginStart="@dimen/labels_horizontal_margin"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/see_recipe_on_text_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/recipe_detail_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recipe_detail_image"
+                    app:layout_constraintTop_toBottomOf="@+id/full_recipe_link"
+                    tools:text="Health and Diet Labels : Low-fat ,Dairy-free , Vegan" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="@dimen/tablayout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/tablayout_margin"
+                    android:layout_marginStart="@dimen/tablayout_margin"
+                    android:layout_marginTop="@dimen/tablayout_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recipe_detail_image"
+                    app:tabGravity="fill"
+                    app:tabMode="fixed"
+                    app:tabTextAppearance="@style/CustomTabText" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/recipe_tabs_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/view_pager_height"
+                    android:layout_marginEnd="@dimen/tablayout_margin"
+                    android:layout_marginStart="@dimen/tablayout_margin"
+                    android:layout_marginTop="@dimen/tablayout_margin"
+                    android:focusable="true"
+                    android:nextFocusDown="@id/adView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tabs" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_share"
+                android:layout_width="@dimen/fab_dimen"
+                android:layout_height="@dimen/fab_dimen"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:contentDescription="@string/share"
+                android:elevation="@dimen/fab_elevation"
+                android:scaleType="center"
+                android:src="@drawable/ic_share_black_24dp" />
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:focusable="true"
+                android:nextFocusRight="@id/fab_share"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/adUnitId" />
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

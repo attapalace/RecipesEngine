@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Recipes Engine</string>
+    <string name="search_hint">Find your recipes</string>
+    <string name="recent_balanced_recipes">Recent balanced recipes</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="failed_json_string">Json Parsing failed</string>
+    <string name="successful_json_parsing">json parsing is successful</string>
+    <string name="connection_error_message">Please check internet connection</string>
+
+    <string name="see_full_recipe_on">See full recipe on</string>
+    <string name="balanced_recipes_params">balanced</string>
+    <string name="no_data_to_show">No data to show</string>
+    <string name="no_results_message">Sorry, we could not find anything that matches!</string>
+    <string name="no_search_item_message">Please write your search item first</string>
+    <string name="favourites">Favourites</string>
+    <string name="share">Share</string>
+    <string name="added_to_favourites">Recipe added to favourites</string>
+    <string name="deleted_from_favourites">Recipe deleted from favourites</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="refine_search">Refine Search by</string>
+    <string name="favourite_recipes">Favourite Recipes</string>
+    <string name="about">About</string>
+    <string name="no_favourite_recipes_added">No favourite Recipes Added</string>
+    <string name="no_info_available">No information available for this nutrient</string>
+    <string name="no_response_message">Oops , It seems you reached maximum hits today</string>
+    <string name="about_text_sample">This is the about textview</string>
+    <string name="share_chooser_title">Share Recipe</string>
+    <string name="widget_recipe_ingredients">Recipe Ingredients :</string>
+    <string name="widget_first_time_message">Open a recipe on the app to show the Ingredients</string>
+    <string name="transition_name">recipeTransitionImage</string>
+    <string name="add_to_favourites_description">add to favourites</string>
+    <string name="adUnitId">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string-array name="health_categories">
+        <item>vegetarian</item>
+        <item>vegan</item>
+        <item>peanut-free</item>
+        <item>sugar-conscious</item>
+        <item>alcohol-free</item>
+        <item>tree-nut-free</item>
+    </string-array>
+
+    <string-array name="diet_categories">
+        <item>balanced</item>
+        <item>high-protein</item>
+        <item>low-carb</item>
+        <item>low-fat</item>
+    </string-array>
+
+
+</resources>

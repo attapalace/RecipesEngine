@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "38285239257",
+    "firebase_url": "https://recipes-engine-23d46.firebaseio.com",
+    "project_id": "recipes-engine-23d46",
+    "storage_bucket": "recipes-engine-23d46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38285239257:android:1ff252c844392f30",
+        "android_client_info": {
+          "package_name": "com.examples.apps.atta.recipesengine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38285239257-6ph5nifhi2sc3qqs3jud6r5mae4sujgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.examples.apps.atta.recipesengine",
+            "certificate_hash": "c901bcd1bb2e62866b3be0ebf366f2dd4658beb2"
+          }
+        },
+        {
+          "client_id": "38285239257-j2sku31h4v5lbou9t6vs6m4hlj2libnt.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "38285239257-j2sku31h4v5lbou9t6vs6m4hlj2libnt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs6kR_Xx6y_Xgt47k4T5f7R10_1ZlV_yU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38285239257-j2sku31h4v5lbou9t6vs6m4hlj2libnt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.examples.apps.atta.recipesengine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:launchMode="singleTop"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".UI.MainActivity"
+            android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.ResultsActivity"
+            android:parentActivityName=".UI.MainActivity" />
+        <activity
+            android:name=".UI.RecipeDetailActivity"
+            />
+        <activity android:name=".UI.FavouritesActivity"
+            android:parentActivityName=".UI.MainActivity"/>
+
+        <activity android:name=".UI.AboutActivity"
+            android:parentActivityName=".UI.MainActivity"/>
+        
+        <provider
+            android:authorities="com.examples.apps.atta.recipesengine"
+            android:name=".Data.RecipeProvider"
+            android:exported="false"/>
+
+        <receiver android:name=".Widget.RecipeWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/recipe_widget_provider_info" />
+        </receiver>
+
+        <service android:name=".Widget.RecipeWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nutrient_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/nutrient_margin"
+        android:layout_marginTop="@dimen/nutrient_margin"
+        android:textSize="@dimen/fragment_list_item_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Fat" />
+
+    <TextView
+        android:id="@+id/total_nutrient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/nutrient_margin"
+        android:layout_marginStart="@dimen/nutrient_margin"
+        android:layout_marginTop="@dimen/nutrient_margin"
+        android:textSize="@dimen/fragment_list_item_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="@+id/nutrient_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="4g" />
+
+    <TextView
+        android:id="@+id/daily_nutrient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/nutrient_margin_56"
+        android:textSize="@dimen/fragment_list_item_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/nutrient_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="22.33%" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/nutrient_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/nutrient_guidline_dimen" />
+
+</android.support.constraint.ConstraintLayout>
