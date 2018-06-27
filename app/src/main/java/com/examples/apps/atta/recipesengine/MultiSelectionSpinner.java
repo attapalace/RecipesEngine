@@ -70,7 +70,6 @@ public class MultiSelectionSpinner extends AppCompatSpinner implements
         builder.setPositiveButton(getResources().getString(R.string.submit), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //todo check this one
                 System.arraycopy(mSelection, 0, mSelectionAtStart, 0, mSelection.length);
                 listener.selectedStrings(getSelectedStrings());
             }

@@ -51,7 +51,8 @@
                     android:layout_marginTop="@dimen/recipe_image_margin"
                     android:transitionName="@string/transition_name"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/recipe_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/recipe_title"
+                    android:contentDescription="@string/recipe_image"/>
 
                 <TextView
                     android:id="@+id/calories_tv"
@@ -159,7 +160,8 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_share_black_24dp" />
 
-            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

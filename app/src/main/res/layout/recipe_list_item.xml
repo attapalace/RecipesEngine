@@ -14,6 +14,7 @@
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:layout_margin="@dimen/list_items_margin"
+        android:contentDescription="@string/recipe_image"
         android:layout_gravity="center"/>
 
     <TextView
@@ -24,6 +25,7 @@
         android:textColor="@android:color/white"
         android:background="@color/list_item_transparent_background"
         android:padding="@dimen/recipe_item_title_padding"
+        android:contentDescription="@string/recipe_title"
         android:labelFor="@+id/recipe_image"
         android:id="@+id/recipe_title"/>
 

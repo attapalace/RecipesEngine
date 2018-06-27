@@ -34,7 +34,7 @@ public class IngredientsListAdapter extends RecyclerView.Adapter<IngredientsList
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (ingredients != null){
-            holder.ingredientTextView.setText("\u2022" + " " + ingredients.get(position).getText());
+            holder.ingredientTextView.setText(new StringBuilder().append("\u2022").append(" ").append(ingredients.get(position).getText()).toString());
         }
     }
 

@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -65,6 +66,12 @@ public class MainActivity extends AppCompatActivity
     public static final String RECIPE_DETAIL = "recipe intent";
     public static final String SEARCH_TERM = "search";
     public static final String LABELS_INTENT = "labels";
+    public static final String SCROLL_STATE = "scroll state";
+    public static final String EDIT_TEXT_STRING = "edittext string";
+    public static final String HITS_LIST = "hits list";
+
+    private ArrayList<Hit> hits;
+    private Parcelable mSavedRecyclerLayoutState;
 
     private List<String> labels;
 
@@ -97,7 +104,9 @@ public class MainActivity extends AppCompatActivity
         multiSelectionSpinner.setListener(this);
 
         if(isNetworkAvailable()){
-            updateRecipes();
+            if (hits == null){
+                updateRecipes();
+            }
         }else {
             Toast.makeText(this, R.string.connection_error_message,Toast.LENGTH_SHORT).show();
         }
@@ -192,9 +201,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onResponse(Call<JsonResponse> call, Response<JsonResponse> response) {
                 if (response.body() != null) {
-                    ArrayList<Hit> hits = response.body().getHits();
+                    hits = response.body().getHits();
                     mRecipeListAdapter.setRecipeData(hits, getApplicationContext());
                     mRecipeListAdapter.notifyDataSetChanged();
+
+                    recyclerView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
 
                     emptyView.setVisibility(View.GONE);
                 }else {
@@ -263,5 +274,25 @@ public class MainActivity extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable(SCROLL_STATE, recyclerView.getLayoutManager().onSaveInstanceState());
+        outState.putString(EDIT_TEXT_STRING , searchEditText.getText().toString());
+        outState.putParcelableArrayList(HITS_LIST , hits);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        mSavedRecyclerLayoutState = savedInstanceState.getParcelable(SCROLL_STATE);
+        recyclerView.getLayoutManager().onRestoreInstanceState(mSavedRecyclerLayoutState);
+
+        searchEditText.setText(savedInstanceState.getString(EDIT_TEXT_STRING));
+        hits = savedInstanceState.getParcelableArrayList(HITS_LIST);
     }
 }
